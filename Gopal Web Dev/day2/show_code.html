@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+    <pre>
+        <code>
+            package Practise_only;
+
+import java.util.Random;
+import java.util.Arrays;
+import java.util.Scanner;
+abstract class phone{
+    abstract void temp();
+}
+interface oldPhone{
+     public void keypad();
+    default void callerTunes(){
+        System.out.println("8 tunes available");
+    }
+}
+class iphone extends phone implements oldPhone{
+    void temp(){
+        System.out.println("I am written in subclass");
+    }
+   public void keypad(){
+        System.out.println();
+    }
+    void over(){
+        System.out.println();
+    }
+}
+public class basics {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+iphone i1  = new iphone();
+i1.callerTunes();
+i1.keypad();
+    }
+    }
+        </code>
+    </pre>
+</body>
+</html>

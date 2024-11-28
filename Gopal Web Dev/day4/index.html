@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .p1{
+            height: 100vh;
+            background-color: darkslateblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* .p1:hover{
+           
+            transition: 10s;
+            transform: rotate(90deg); 
+        }*/
+        .c1{
+            background-color: orange;
+            height: 200px;
+            width: 400px;
+           
+        }
+        .c1:hover{
+           /* transform: rotate(-360deg);  */
+            transition: 3s;
+            translate: 90px;
+            box-shadow:10px 10px 10px black;
+        }
+        .c2{
+            background-color: palevioletred;
+            height: 200px;
+            width: 400px;
+            
+        }
+        .c2:hover{
+            /* transform: rotate(360deg); */
+            transition: 2s;
+            translate: -90px;
+            box-shadow:-10px 10px 10px black;
+        }
+    </style>
+</head>
+<body>
+    <div class="p1">
+        <div class="c1"></div>
+        <div class="c2"></div>
+        
+    </div>
+</body>
+</html>
