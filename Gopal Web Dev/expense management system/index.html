@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Management System</h1>
+        <div class="form-section">
+            <label for="expenseName">Expense Name:</label>
+            <input type="text" id="expenseName" placeholder="Enter expense name" required>
+            <label for="expenseAmount">Amount:</label>
+            <input type="number" id="expenseAmount" placeholder="Enter amount" required>
+            <button id="addExpenseBtn">Add Expense</button>
+        </div>
+        <div class="expense-list-section">
+            <h2>Expense List</h2>
+            <ul id="expenseList"></ul>
+        </div>
+        <div class="total-section">
+            <h2>Total Expense: ₹<span id="totalAmount">0</span></h2>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript Code for functionality
+        document.getElementById('addExpenseBtn').addEventListener('click', function() {
+            const expenseName = document.getElementById('expenseName').value.trim();
+            const expenseAmount = parseFloat(document.getElementById('expenseAmount').value);
+
+            if (!expenseName || isNaN(expenseAmount) || expenseAmount <= 0) {
+                alert('Please enter a valid name and amount.');
+                return;
+            }
+
+            // Add expense to the list
+            const expenseList = document.getElementById('expenseList');
+            const listItem = document.createElement('li');
+            listItem.innerText = `${expenseName}: ₹${expenseAmount}`;
+            expenseList.appendChild(listItem);
+
+            // Update total
+            const totalAmountElement = document.getElementById('totalAmount');
+            const currentTotal = parseFloat(totalAmountElement.innerText);
+            totalAmountElement.innerText = (currentTotal + expenseAmount).toFixed(2);
+
+            // Clear input fields
+            document.getElementById('expenseName').value = '';
+            document.getElementById('expenseAmount').value = '';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id{
+            display: flex;
+            text-align: center;
+            font-family: sans-serif;
+            
+
+
+        }
+    </style>
+</head>
+<body>
+    <span id="vote"><h1>Check Your Age</h1></span><br>
+    <button onclick="checkvote()">FILL YOUR AGE</button>
+    <script>
+        const checkvote = () => {
+           let age=window.prompt("enyter your age")
+           let check=document.getElementById("vote");
+           if(age>=18){
+            check.innerHTML = "YAY! YOY CAN VOTE"
+           }
+           else{
+            check.innerHTML="SORRY! YOU CAN'T VOTE "
+           }
+        }
+    </script>
+</body>
+</html>
